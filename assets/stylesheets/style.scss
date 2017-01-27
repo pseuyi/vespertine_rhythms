@@ -1,0 +1,67 @@
+$primary: #afaf4b;
+$lite-gr: rgba(224, 224, 223, 0.9);
+
+.navbar.navbar-default.navbar-static-top, .navbar-brand {
+  background-color: $primary;
+  border-color: $primary;
+  color: black !important;
+  margin-bottom: 0;
+
+}
+.navbar-default .navbar-nav>.active>a {
+  background-color: lighten($primary, 10%) !important;
+
+}
+.navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+  background-color: $primary;
+  color: white !important;
+}
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+  color: white !important;
+}
+
+.container.map {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+#map-canvas {
+  width: 100%;
+  height: calc(100% - 51px);
+  position: absolute;
+}
+#menu-group {
+  position: fixed;
+  float: left;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2em;
+  h1 {
+    font-size: 1em;
+    margin: 0.4em 0;
+  }
+}
+#menu-select {
+  margin-right: 2%;
+  // margin-top: 30%;
+  padding: 1em;
+  background-color: $lite-gr;
+  div {
+    // border: 1px solid $primary;
+    label, select, option {
+      font-size: 0.8em;
+      font-weight: normal;
+      display: block;
+      width: 100%
+    }
+  }
+}
+#plans {
+  // border: 3px solid red;
+  padding: 1em;
+  background-color: $lite-gr;
+}

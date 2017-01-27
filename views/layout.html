@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>Trip Planner!</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/jquery/dist/jquery.js"></script>
+    <script src="/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2uIHhIgzgBL3O4wOK0m0_F0mp2cxdAPw&sensor=true"></script>
+
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container-fluid">
+
+        <div class="navbar-header">
+           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-links" aria-expanded="false">
+             <span class="sr-only">Toggle navigation</span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+           </button>
+           <a class="navbar-brand" href="#">tripplanner</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="main-links">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">home<span class="sr-only">(current)</span></a></li>
+            <li><a href="#">about</a></li>
+            <li><a href="#">contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class='container map' >
+      <div class ='col-lg-8
+        col-md-8
+        col-sm-6
+        col-xs-6' id='map-canvas'>
+      </div>
+
+      {% block content %}
+      {% endblock %}
+    </div>
+
+  <script src='/js/map.js' defer></script>
+  </body>
+</html>

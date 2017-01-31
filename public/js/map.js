@@ -1,18 +1,37 @@
-function initialize_gmaps() {
+let map, draw, markers;
+
+markers = [[]]
+
+draw = (attraction, type) => {
+  let marker = new google.maps.Marker({
+    position: new google.maps.LatLng(...attraction.place.location),
+    draggable: true,
+    title: attraction.name,
+    icon: icons[type],
+    animation: google.maps.Animation.DROP
+  })
+  let day = $('.nav.nav-pills li.active a').data('id')
+  markers[day-1].push(marker)
+  console.log('the markers array', markers)
+  marker.setMap(map)
+}
+
+const icons = {
+  hotel: './icons/hotel.png',
+  restaurant: './icons/restaurant.png',
+  activity: './icons/activity.png'
+}
+
+initialize = () => {
     // initialize new google maps LatLng object
     var myLatlng = new google.maps.LatLng(40.705189,-74.009209);
-    // set the map options hash
-    var mapOptions = {
-        center: myLatlng,
-        zoom: 16,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
     // get the maps div's HTML obj
     var map_canvas_obj = document.getElementById("map-canvas");
     // initialize a new Google Map with the options
-    var map = new google.maps.Map(map_canvas_obj, {
-          center: {lat: 40.674, lng: -73.945},
-          zoom: 12,
+    map = new google.maps.Map(map_canvas_obj, {
+          center: myLatlng,
+          zoom: 15,
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
           styles: [
             {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
             {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
@@ -95,14 +114,14 @@ function initialize_gmaps() {
           ]
         });
     // Add the marker to the map
-    var marker = new google.maps.Marker({
-        position: myLatlng,
-        title:"Hello World!"
-    });
+    // var marker = new google.maps.Marker({
+    //     position: myLatlng,
+    //     title:"Hello World!"
+    // });
     // Add the marker to the map by calling setMap()
-    marker.setMap(map);
+    //marker.setMap(map);
 }
 
-$(document).ready(function() {
-    initialize_gmaps();
-});
+$(()=>{
+  initialize();
+})

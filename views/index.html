@@ -9,34 +9,62 @@
 			col-xs-4'>
 
 			<h1>welcome!</h1>
-			<div>
+			<div id='options-panel'>
+
 				<label for='hotels'>hotels</label>
-			  <select>
-			    {% for hotel in hotels %}
-			    <option>{{ hotel.name }}</option>
-			    {% endfor %}
+			  <select data-type='hotels' id='hotel-opts'>
+			    <option>choose hotel</option>
 			  </select>
+				<button id='add-hotel' type="button" class="btn-default">+</button>
+
 				<label for='restaurants'>restaurants</label>
-			  <select>
-			    {% for restaurant in restaurants %}
-			    <option>{{ restaurant.name }}</option>
-			    {% endfor %}
+			  <select data-type='restaurants' id='restaurant-opts'>
+			    <option>choose restaurant</option>
 			  </select>
+				<button id='add-restaurant' type="button" class="btn-default">+</button>
+
 				<label for='activities'>activities</label>
-			  <select>
-			    {% for activity in activities %}
-			    <option>{{ activity.name }}</option>
-			    {% endfor %}
+			  <select data-type='activities' id='activity-opts'>
+			    <option>choose activity</option>
 			  </select>
+				<button id='add-activity' type="button" class="btn-default">+</button>
+
 			</div>
 		</div>
+
 		<div id='plans' class ='col-lg-4
 			col-md-4
 			col-sm-4
 			col-xs-4'>
-			<h1>my hotels</h1>
-			<h1>my restaurants</h1>
-			<h1>my activities</h1>
+
+			<ul class="nav nav-pills">
+				<li class="active">
+	        <a href="#1" data-id='1' data-toggle="tab">1</a>
+				</li>
+				<li id='add-day'>
+					<a data-toggle="" data-id='add-link'>+</a>
+				</li>
+			</ul>
+
+			<div class="tab-content clearfix">
+				<div class="tab-pane active" id="1">
+					<h1>my hotels</h1>
+						<ul class='list my-hotels'>
+						</ul>
+					<h1>my restaurants</h1>
+						<ul class='list my-restaurants'>
+						</ul>
+					<h1>my activities</h1>
+						<ul class='list my-activities'>
+						</ul>
+				</div>
+			</div>
+
+			<!-- <button type="button" class="btn-default btn-circle">1</button>
+			<button type="button" class="btn-default btn-circle">2</button>
+			<button type="button" class="btn-default btn-circle">3</button> -->
+			<!-- <button type="button" class="1btn-default btn-circle"><i class="glyphicon glyphicon-ok"></i></button> -->
+
 		</div>
 
 	</div>

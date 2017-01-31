@@ -26,7 +26,8 @@ app.set('view engine', 'html');
 // statically serve public folder
 app.use(express.static(__dirname + '/public'));
 // statically serve bower folder
-app.use(express.static(__dirname + '/bower_components'))
+app.use('/bootstrap', express.static(__dirname + '/bower_components/bootstrap/dist'));
+app.use('/jquery', express.static(__dirname + '/bower_components/jquery/dist'));
 
 app.get('/', function(req, res, next){
 	Promise.all([
@@ -44,7 +45,7 @@ app.get('/', function(req, res, next){
 	.catch(next)
 });
 
-// not found middleware
+//not found middleware
 app.use(function(req, res, next){
 	const err = new Error('Not Found');
 	err.status = 404;
@@ -52,18 +53,24 @@ app.use(function(req, res, next){
 	next(err);
 });
 
+// app.use(function(req, res, next) {
+// 	res.send('404: Page not Found', 404);
+// })
+
 // error-handling middleware
 app.use(function(err, req, res, next){
-	res.status(err.status || 500);
-	console.error(err);
+	if (res.headersSent) {
+		return next(err)
+	}
+	res.status(500)
 	res.render('error', {err: err});
 });
 
-db.sync()
-.then(function(){
-	console.log("synched with db");
-	app.listen(3000, function(){
-		console.log("app is listening on port 3000...")
-	});
-})
-.catch(console.error);
+// db.sync()
+// .then(function(){
+// 	console.log("synced with db");
+// })
+app.listen(3000, function(){
+	console.log("app is listening on port 3000...")
+});
+//.catch(console.error);

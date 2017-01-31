@@ -38,7 +38,7 @@ $lite-gr: rgba(224, 224, 223, 0.9);
   float: left;
   bottom: 0;
   left: 0;
-  width: 100%;
+  width: 90%;
   padding: 2em;
   h1 {
     font-size: 1em;
@@ -47,21 +47,68 @@ $lite-gr: rgba(224, 224, 223, 0.9);
 }
 #menu-select {
   margin-right: 2%;
-  // margin-top: 30%;
   padding: 1em;
   background-color: $lite-gr;
   div {
     // border: 1px solid $primary;
-    label, select, option {
+    label, select, button {
       font-size: 0.8em;
       font-weight: normal;
-      display: block;
-      width: 100%
+      width: 100%;
     }
   }
 }
 #plans {
-  // border: 3px solid red;
-  padding: 1em;
-  background-color: $lite-gr;
+  padding: 0;
+  background-color: none;
+  font-size: 0.9em;
+  h1 {
+    padding: 0.2em 1em;
+  }
+  .nav-pills > li.active > a::before {
+      content: "day - ";
+  }
+  .nav-pills > li.active > a,
+  .nav-pills > li.active > a:focus,
+  .nav-pills > li.active > a:hover,
+  .nav-pills > li > a:hover {
+    color: black;
+    background-color: $lite-gr;
+  }
+  .nav-pills > li > a,
+  .nav-pills > li > a:focus {
+    padding: 0.2em 1em;
+    color: $lite-gr;
+    background-color: black;
+    border-radius: 4px 4px 0 0;
+  }
+  .tab-content {
+    color : black;
+    background-color: $lite-gr;
+    //padding : 5px 15px;
+  }
+  .list {
+    padding-left: 1em;
+  }
+  .list > li {
+    list-style: none;
+  }
+}
+.btn-circle {
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  padding: 2px 0;
+  font-size: 10px;
+  line-height: 1.428571429;
+  border-radius: 0px;
+}
+.map-icon-label .map-icon {
+	display: block;
+	font-size: 17px;
+	color: #FFFFFF;
+	width: 33.6px;
+	line-height: 33.6px;
+	text-align: center;
+	white-space: nowrap;
 }

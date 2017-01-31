@@ -6,7 +6,7 @@ const Place = db.define('place', {
   city: Sequelize.STRING,
   state: Sequelize.STRING,
   phone: Sequelize.STRING,
-  location: Sequelize.ARRAY(Sequelize.INTEGER)
+  location: Sequelize.ARRAY(Sequelize.DECIMAL)
 })
 
 module.exports = Place

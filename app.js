@@ -72,4 +72,4 @@ db.sync()
 })
 app.listen(process.env.PORT || 3000, function(){
 	console.log("serving up app.js...")
-});
+})

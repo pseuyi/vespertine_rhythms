@@ -12,13 +12,15 @@
     "start:production": "node app.js",
     "start:dev": "nodemon -e html,css,js app.js",
     "start": "node app.js",
-    "build-css": "node-sass -w -r assets/stylesheets -o public/stylesheets"
+    "build-css": "node-sass -w -r assets/stylesheets -o public/stylesheets",
+    "postinstall": "./node_modules/bower/bin/bower install"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bluebird": "^3.4.7",
     "body-parser": "^1.15.2",
+    "bower": "0.6.x",
     "express": "^4.14.0",
     "node-sass": "^4.3.0",
     "nunjucks": "^2.5.2",

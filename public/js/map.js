@@ -27,10 +27,11 @@ draw = (attraction, type) => {
   let path = new google.maps.Polyline({
     path: coords[day-1],
     geodesic: true,
-    strokeColor: '#f441b0',
-    strokeOpacity: 0.2,
-    strokeWeight: 5
+    strokeColor: '#742bf2',
+    strokeOpacity: 0.3,
+    strokeWeight: 40
   })
+  //742bf2 f441b0 pink
   // save path
   if(!paths[day-1]) paths[day-1] = []
   paths[day-1].push(path)

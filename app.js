@@ -70,7 +70,7 @@ app.use(function(err, req, res, next){
 // .then(function(){
 // 	console.log("synced with db");
 // })
-app.listen(3000, function(){
+app.listen(process.env.PORT | 3000, function(){
 	console.log("app is listening on port 3000...")
 });
 //.catch(console.error);

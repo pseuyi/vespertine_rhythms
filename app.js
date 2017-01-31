@@ -53,9 +53,9 @@ app.use(function(req, res, next){
 	next(err);
 });
 
-// app.use(function(req, res, next) {
-// 	res.send('404: Page not Found', 404);
-// })
+app.use(function(req, res, next) {
+	res.send('404: Page not Found', 404);
+})
 
 // error-handling middleware
 app.use(function(err, req, res, next){
@@ -66,11 +66,11 @@ app.use(function(err, req, res, next){
 	res.render('error', {err: err});
 });
 
-// db.sync()
-// .then(function(){
-// 	console.log("synced with db");
-// })
+db.sync()
+.then(function(){
+	console.log("synced with db");
+})
 app.listen(process.env.PORT || 3000, function(){
-	console.log("app is listening on port 3000...")
+	console.log("serving up app.js...")
 });
-//.catch(console.error);
+.catch(console.error);

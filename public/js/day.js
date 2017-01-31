@@ -22,7 +22,6 @@ const switchDay = (active, activeContent) => {
 }
 
 const addDay = () => {
-  console.log('adding a new day tab...')
   let next = $('.nav.nav-pills').children().length
   //add a nav pill
   let tab = `<li class=\'\'><a href=\'#${next}\' data-id=${next} data-toggle=\'tab\'>${next}</a></li>`
@@ -30,7 +29,7 @@ const addDay = () => {
   //add the tab content
   let content =
   `<div class=\"tab-pane\" id=\"${next}\">
-      <h1>my hotels testing ${next}</h1>
+      <h1>my hotels</h1>
         <ul class=\'list my-hotels\'>
         </ul>
       <h1>my restaurants</h1>

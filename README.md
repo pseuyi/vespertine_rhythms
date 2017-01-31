@@ -6,5 +6,5 @@
 
 ## todos  
 
--remove needs to remove markers and update paths
--should not be able to add same activity more than once
+- remove needs to remove markers and update paths  
+- should not be able to add same activity more than once  

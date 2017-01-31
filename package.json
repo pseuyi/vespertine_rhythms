@@ -1,7 +1,11 @@
 {
-  "name": "start",
+  "name": "vespertine_rhythms",
   "version": "1.0.0",
-  "description": "",
+  "engines": {
+    "node": "7.0.0",
+    "npm": "3.10.8"
+  },
+  "description": "nightlife planning",
   "main": "index.js",
   "scripts": {
     "test": "ec2ho \"Error: no test specified\" && exit 1",

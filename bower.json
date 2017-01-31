@@ -1,0 +1,21 @@
+{
+  "name": "vespertine_rhythms",
+  "description": "nightlife planning",
+  "main": "index.js",
+  "authors": [
+    "freda nada <fredasnada@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/pseuyi/vespertine_rhythms",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1"
+  }
+}

@@ -37,9 +37,8 @@ $(()=>{
     // add to correct list
     activeList.append(`<li value=${attraction.id}>
       - ${attraction.name}
-      <button type='button' data-id=${attraction.id} data-list=${list} class='btn-default btn-circle remove-btn'><i class="glyphicon glyphicon-remove"></i></button>
+      <button type='button' data-id=${attraction.id} data-list=${list} class='btn btn-default remove-btn'>x</button>
       </li>`)
-
     draw(attraction, type)
   }
 })

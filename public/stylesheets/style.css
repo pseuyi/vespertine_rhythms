@@ -74,14 +74,15 @@
   #plans .list > li {
     list-style: none; }
 
-.btn-circle {
-  width: 24px;
-  height: 24px;
-  text-align: center;
-  padding: 2px 0;
-  font-size: 10px;
-  line-height: 1.428571429;
-  border-radius: 0px; }
+button.btn.btn-default.remove-btn {
+  margin-right: 0.2em;
+  text-decoration: none;
+  font-weight: normal;
+  font-size: 0.7em;
+  border-radius: 12px;
+  padding: 2px 4px;
+  background: none;
+  margin-bottom: 4px; }
 
 .map-icon-label .map-icon {
   display: block;

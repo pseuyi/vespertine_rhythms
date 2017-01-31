@@ -1,8 +1,16 @@
-let map, draw, markers;
+let map, draw, markers, coords, paths
 
 markers = [[]]
+coords = [[]]
+paths = [[]]
 
 draw = (attraction, type) => {
+  // define day num
+  let day = $('.nav.nav-pills li.active a').data('id')
+  // save coords
+  if(!coords[day-1]) coords[day-1] = []
+  coords[day-1].push(new google.maps.LatLng(...attraction.place.location))
+  // new marker
   let marker = new google.maps.Marker({
     position: new google.maps.LatLng(...attraction.place.location),
     draggable: true,
@@ -10,10 +18,24 @@ draw = (attraction, type) => {
     icon: icons[type],
     animation: google.maps.Animation.DROP
   })
-  let day = $('.nav.nav-pills li.active a').data('id')
+  // save marker
   markers[day-1].push(marker)
-  console.log('the markers array', markers)
+  // drop the marker
   marker.setMap(map)
+
+  // new path
+  let path = new google.maps.Polyline({
+    path: coords[day-1],
+    geodesic: true,
+    strokeColor: '#f441b0',
+    strokeOpacity: 0.2,
+    strokeWeight: 5
+  })
+  // save path
+  if(!paths[day-1]) paths[day-1] = []
+  paths[day-1].push(path)
+  // drop path
+  path.setMap(map)
 }
 
 const icons = {
@@ -113,13 +135,6 @@ initialize = () => {
             }
           ]
         });
-    // Add the marker to the map
-    // var marker = new google.maps.Marker({
-    //     position: myLatlng,
-    //     title:"Hello World!"
-    // });
-    // Add the marker to the map by calling setMap()
-    //marker.setMap(map);
 }
 
 $(()=>{

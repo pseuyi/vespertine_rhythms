@@ -15,10 +15,14 @@ const switchDay = (active, activeContent) => {
   $currContent.toggleClass('active')
   active.toggleClass('active')
   activeContent.toggleClass('active')
-  // reset markers
+  // reset markers and path
   markers[currDay-1].forEach(marker=>marker.setMap(null))
   // redraw markers if there are marker on this day
   markers[activeDay-1] && markers[activeDay - 1].forEach(marker=>marker.setMap(map))
+  // reset paths
+  paths[currDay-1].forEach(path=>path.setMap(null))
+  // creating paths, paths[active] is array of latlngs, create only if exists
+  paths[activeDay-1] && paths[activeDay-1].forEach(path=>path.setMap(map))
 }
 
 const addDay = () => {
@@ -40,7 +44,6 @@ const addDay = () => {
         </ul>
     </div>`
   $('#plans div.tab-content:last').append(content)
-
   // change active tab
   let active = $('#add-day').prev()
   let activeContent = $(`#plans div#${next}`)

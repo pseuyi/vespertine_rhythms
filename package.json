@@ -11,7 +11,7 @@
     "test": "ec2ho \"Error: no test specified\" && exit 1",
     "start:production": "node app.js",
     "start:dev": "nodemon -e html,css,js app.js",
-    "start": "npm run start:dev",
+    "start": "node app.js",
     "build-css": "node-sass -w -r assets/stylesheets -o public/stylesheets"
   },
   "author": "",

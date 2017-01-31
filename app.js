@@ -64,7 +64,7 @@ app.use(function(err, req, res, next){
 	}
 	res.status(500)
 	res.render('error', {err: err});
-});
+})
 
 db.sync()
 .then(function(){
@@ -73,4 +73,3 @@ db.sync()
 app.listen(process.env.PORT || 3000, function(){
 	console.log("serving up app.js...")
 });
-.catch(console.error);

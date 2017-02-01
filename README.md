@@ -6,4 +6,4 @@
 
 ## todos  
 
-- remove needs to remove markers and update paths  
+- after removing an option from map, it is added back to options but in the wrong place

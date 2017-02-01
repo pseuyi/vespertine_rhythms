@@ -34,13 +34,13 @@ const addDay = () => {
   let content =
   `<div class=\"tab-pane\" id=\"${next}\">
       <h1>my hotels</h1>
-        <ul class=\'list my-hotels\'>
+        <ul class=\'list my-hotel\'>
         </ul>
       <h1>my restaurants</h1>
-        <ul class=\'list my-restaurants\'>
+        <ul class=\'list my-restaurant\'>
         </ul>
       <h1>my activities</h1>
-        <ul class=\'list my-activities\'>
+        <ul class=\'list my-activity\'>
         </ul>
     </div>`
   $('#plans div.tab-content:last').append(content)

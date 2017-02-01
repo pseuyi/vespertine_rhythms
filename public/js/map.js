@@ -1,12 +1,16 @@
-let map, draw, markers, coords, paths
+let map, markers, coords, paths, attractions
 
 markers = [[]]
 coords = [[]]
 paths = [[]]
+attractions = [[]]
 
-draw = (attraction, type) => {
+const draw = (attraction, type) => {
   // define day num
   let day = $('.nav.nav-pills li.active a').data('id')
+  // map attraction to order in day
+  if(!attractions[day-1]) attractions[day-1] =[]
+  attractions[day-1].push(attraction.placeId)
   // save coords
   if(!coords[day-1]) coords[day-1] = []
   coords[day-1].push(new google.maps.LatLng(...attraction.place.location))
@@ -22,7 +26,11 @@ draw = (attraction, type) => {
   markers[day-1].push(marker)
   // drop the marker
   marker.setMap(map)
+  // call createPath
+  createPath(day)
+}
 
+const createPath = (day) => {
   // new path
   let path = new google.maps.Polyline({
     path: coords[day-1],
@@ -31,7 +39,6 @@ draw = (attraction, type) => {
     strokeOpacity: 0.9,
     strokeWeight: 1
   })
-
   // save path
   if(!paths[day-1]) paths[day-1] = []
   paths[day-1].push(path)
@@ -45,7 +52,7 @@ const icons = {
   activity: './icons/activity.png'
 }
 
-initialize = () => {
+const initialize = () => {
     // initialize new google maps LatLng object
     var myLatlng = new google.maps.LatLng(40.705189,-74.009209);
     // get the maps div's HTML obj

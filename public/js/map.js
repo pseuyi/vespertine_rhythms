@@ -59,86 +59,86 @@ const initialize = () => {
     // initialize a new Google Map with the options
     map = new google.maps.Map(map_canvas_obj, {
           center: myLatlng,
-          zoom: 15,
+          zoom: 12,
           mapTypeId: google.maps.MapTypeId.ROADMAP,
           styles: [
-            {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
-            {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
-            {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
+            {elementType: 'geometry', stylers: [{color: '#fcfaf4'}]},
+            {elementType: 'labels.text.stroke', stylers: [{color: '#fcfaf4'}]},
+            {elementType: 'labels.text.fill', stylers: [{color: '#fcfaf4'}]},
             {
               featureType: 'administrative.locality',
               elementType: 'labels.text.fill',
-              stylers: [{color: '#d59563'}]
+              stylers: [{color: '#fcfaf4'}]
             },
             {
               featureType: 'poi',
               elementType: 'labels.text.fill',
-              stylers: [{color: '#d59563'}]
+              stylers: [{color: '#fcfaf4'}]
             },
             {
               featureType: 'poi.park',
               elementType: 'geometry',
-              stylers: [{color: '#263c3f'}]
+              stylers: [{color: '#fcfaf4'}]
             },
             {
               featureType: 'poi.park',
               elementType: 'labels.text.fill',
-              stylers: [{color: '#6b9a76'}]
+              stylers: [{color: '#fcfaf4'}]
             },
             {
               featureType: 'road',
               elementType: 'geometry',
-              stylers: [{color: '#38414e'}]
+              stylers: [{color: '#fcfaf4'}]
             },
             {
               featureType: 'road',
               elementType: 'geometry.stroke',
-              stylers: [{color: '#212a37'}]
+              stylers: [{color: '#fcfaf4'}]
             },
             {
               featureType: 'road',
               elementType: 'labels.text.fill',
-              stylers: [{color: '#9ca5b3'}]
+              stylers: [{color: '#fcfaf4'}]
             },
             {
               featureType: 'road.highway',
               elementType: 'geometry',
-              stylers: [{color: '#746855'}]
+              stylers: [{color: '#fcfaf4'}]
             },
             {
               featureType: 'road.highway',
               elementType: 'geometry.stroke',
-              stylers: [{color: '#1f2835'}]
+              stylers: [{color: '#fcfaf4'}]
             },
             {
               featureType: 'road.highway',
               elementType: 'labels.text.fill',
-              stylers: [{color: '#f3d19c'}]
+              stylers: [{color: '#fcfaf4'}]
             },
             {
               featureType: 'transit',
               elementType: 'geometry',
-              stylers: [{color: '#2f3948'}]
+              stylers: [{color: '#fcfaf4'}]
             },
             {
               featureType: 'transit.station',
               elementType: 'labels.text.fill',
-              stylers: [{color: '#d59563'}]
+              stylers: [{color: '#fcfaf4'}]
             },
             {
               featureType: 'water',
               elementType: 'geometry',
-              stylers: [{color: '#17263c'}]
+              stylers: [{color: '#fcfaf4'}]
             },
             {
               featureType: 'water',
               elementType: 'labels.text.fill',
-              stylers: [{color: '#515c6d'}]
+              stylers: [{color: '#fcfaf4'}]
             },
             {
               featureType: 'water',
               elementType: 'labels.text.stroke',
-              stylers: [{color: '#17263c'}]
+              stylers: [{color: '#fcfaf4'}]
             }
           ]
         });

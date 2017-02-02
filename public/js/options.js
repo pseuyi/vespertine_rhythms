@@ -2,9 +2,13 @@
 
 const $options = $('#options-panel')
 const $vape = $options.find('#vape-opts')
+const $bar = $options.find('#bar-opts')
+const $spirit = $options.find('#spirit-opts')
 
 const model = {
-  vape: vapes
+  vape: vapes,
+  bar: bars,
+  spirit: spirits
 }
 
 const addToItinerary = (type) => {
@@ -17,7 +21,6 @@ const addToItinerary = (type) => {
   let id = $selection.val()
   // find the actual attraction
   let attraction = model[type].find(ele => ele.id === id)
-  console.log('finding this attraction inside the model', attraction)
   // add to correct list, edit: don't really need all this data
   $activeList.append(`<li value=${attraction.id} data-type=${type}>
     - ${attraction.name}
@@ -30,9 +33,13 @@ const addToItinerary = (type) => {
 
 const loadOptions = () => {
   vapes.forEach(vape => $vape.append(`<option value = ${vape.id}>${vape.name}</option>`))
+  bars.forEach(bar => $bar.append(`<option value = ${bar.id}>${bar.name}</option>`))
+  spirits.forEach(spirit => $spirit.append(`<option value = ${spirit.id}>${spirit.name}</option>`))
 }
 
 $(()=>{
   loadOptions ()
   $('#add-vape').click(()=>addToItinerary('vape'))
+  $('#add-bar').click(()=>addToItinerary('bar'))
+  $('#add-spirit').click(()=>addToItinerary('spirit'))
 })

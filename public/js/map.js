@@ -5,18 +5,22 @@ coords = [[]]
 paths = [[]]
 attractions = [[]]
 
+const icons = {
+  vape: './icons/smoke.png'
+}
+
 const draw = (attraction, type) => {
   // define day num
   let day = $('.nav.nav-pills li.active a').data('id')
   // map attraction to order in day
   if(!attractions[day-1]) attractions[day-1] =[]
-  attractions[day-1].push(attraction.placeId)
+  attractions[day-1].push(attraction.id)
   // save coords
   if(!coords[day-1]) coords[day-1] = []
-  coords[day-1].push(new google.maps.LatLng(...attraction.place.location))
+  coords[day-1].push(new google.maps.LatLng(attraction.location.lat, attraction.location.lng))
   // new marker
   let marker = new google.maps.Marker({
-    position: new google.maps.LatLng(...attraction.place.location),
+    position: new google.maps.LatLng(attraction.location.lat, attraction.location.lng),
     draggable: true,
     title: attraction.name,
     icon: icons[type],
@@ -37,7 +41,7 @@ const createPath = (day) => {
     geodesic: true,
     strokeColor: '#f441b0',
     strokeOpacity: 0.9,
-    strokeWeight: 1
+    strokeWeight: 1,
   })
   // save path
   if(!paths[day-1]) paths[day-1] = []
@@ -46,11 +50,6 @@ const createPath = (day) => {
   path.setMap(map)
 }
 
-const icons = {
-  hotel: './icons/hotel.png',
-  restaurant: './icons/restaurant.png',
-  activity: './icons/activity.png'
-}
 
 const initialize = () => {
     // initialize new google maps LatLng object

@@ -5,18 +5,22 @@ coords = [[]]
 paths = [[]]
 attractions = [[]]
 
+const icons = {
+  vape: './icons/smoke.png'
+}
+
 const draw = (attraction, type) => {
   // define day num
   let day = $('.nav.nav-pills li.active a').data('id')
   // map attraction to order in day
   if(!attractions[day-1]) attractions[day-1] =[]
-  attractions[day-1].push(attraction.placeId)
+  attractions[day-1].push(attraction.id)
   // save coords
   if(!coords[day-1]) coords[day-1] = []
-  coords[day-1].push(new google.maps.LatLng(...attraction.place.location))
+  coords[day-1].push(new google.maps.LatLng(attraction.location.lat, attraction.location.lng))
   // new marker
   let marker = new google.maps.Marker({
-    position: new google.maps.LatLng(...attraction.place.location),
+    position: new google.maps.LatLng(attraction.location.lat, attraction.location.lng),
     draggable: true,
     title: attraction.name,
     icon: icons[type],
@@ -37,7 +41,7 @@ const createPath = (day) => {
     geodesic: true,
     strokeColor: '#f441b0',
     strokeOpacity: 0.9,
-    strokeWeight: 1
+    strokeWeight: 1,
   })
   // save path
   if(!paths[day-1]) paths[day-1] = []
@@ -46,11 +50,6 @@ const createPath = (day) => {
   path.setMap(map)
 }
 
-const icons = {
-  hotel: './icons/hotel.png',
-  restaurant: './icons/restaurant.png',
-  activity: './icons/activity.png'
-}
 
 const initialize = () => {
     // initialize new google maps LatLng object
@@ -60,86 +59,86 @@ const initialize = () => {
     // initialize a new Google Map with the options
     map = new google.maps.Map(map_canvas_obj, {
           center: myLatlng,
-          zoom: 15,
+          zoom: 12,
           mapTypeId: google.maps.MapTypeId.ROADMAP,
           styles: [
-            {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
-            {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
-            {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
+            {elementType: 'geometry', stylers: [{color: '#fcfaf4'}]},
+            {elementType: 'labels.text.stroke', stylers: [{color: '#fcfaf4'}]},
+            {elementType: 'labels.text.fill', stylers: [{color: '#fcfaf4'}]},
             {
               featureType: 'administrative.locality',
               elementType: 'labels.text.fill',
-              stylers: [{color: '#d59563'}]
+              stylers: [{color: '#fcfaf4'}]
             },
             {
               featureType: 'poi',
               elementType: 'labels.text.fill',
-              stylers: [{color: '#d59563'}]
+              stylers: [{color: '#fcfaf4'}]
             },
             {
               featureType: 'poi.park',
               elementType: 'geometry',
-              stylers: [{color: '#263c3f'}]
+              stylers: [{color: '#fcfaf4'}]
             },
             {
               featureType: 'poi.park',
               elementType: 'labels.text.fill',
-              stylers: [{color: '#6b9a76'}]
+              stylers: [{color: '#fcfaf4'}]
             },
             {
               featureType: 'road',
               elementType: 'geometry',
-              stylers: [{color: '#38414e'}]
+              stylers: [{color: '#fcfaf4'}]
             },
             {
               featureType: 'road',
               elementType: 'geometry.stroke',
-              stylers: [{color: '#212a37'}]
+              stylers: [{color: '#fcfaf4'}]
             },
             {
               featureType: 'road',
               elementType: 'labels.text.fill',
-              stylers: [{color: '#9ca5b3'}]
+              stylers: [{color: '#fcfaf4'}]
             },
             {
               featureType: 'road.highway',
               elementType: 'geometry',
-              stylers: [{color: '#746855'}]
+              stylers: [{color: '#fcfaf4'}]
             },
             {
               featureType: 'road.highway',
               elementType: 'geometry.stroke',
-              stylers: [{color: '#1f2835'}]
+              stylers: [{color: '#fcfaf4'}]
             },
             {
               featureType: 'road.highway',
               elementType: 'labels.text.fill',
-              stylers: [{color: '#f3d19c'}]
+              stylers: [{color: '#fcfaf4'}]
             },
             {
               featureType: 'transit',
               elementType: 'geometry',
-              stylers: [{color: '#2f3948'}]
+              stylers: [{color: '#fcfaf4'}]
             },
             {
               featureType: 'transit.station',
               elementType: 'labels.text.fill',
-              stylers: [{color: '#d59563'}]
+              stylers: [{color: '#fcfaf4'}]
             },
             {
               featureType: 'water',
               elementType: 'geometry',
-              stylers: [{color: '#17263c'}]
+              stylers: [{color: '#fcfaf4'}]
             },
             {
               featureType: 'water',
               elementType: 'labels.text.fill',
-              stylers: [{color: '#515c6d'}]
+              stylers: [{color: '#fcfaf4'}]
             },
             {
               featureType: 'water',
               elementType: 'labels.text.stroke',
-              stylers: [{color: '#17263c'}]
+              stylers: [{color: '#fcfaf4'}]
             }
           ]
         });

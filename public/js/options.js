@@ -1,6 +1,7 @@
 'use strict'
 
 const $options = $('#options-panel')
+const $vape = $options.find('#vape-opts')
 const $hotel = $options.find('#hotel-opts')
 const $restaurant = $options.find('#restaurant-opts')
 const $activity = $options.find('#activity-opts')
@@ -32,6 +33,8 @@ const addToItinerary = (type) => {
 }
 
 const loadOptions = () => {
+  vapes.forEach(vape => $vape.append(`<option>${vape.name}</option>`))
+
   hotels.forEach(hotel => $hotel.append(`<option value=${hotel.id}>${hotel.name}</option>`))
   restaurants.forEach(restaurant => $restaurant.append(`<option value=${restaurant.id}>${restaurant.name}</option>`))
   activities.forEach(activity => $activity.append(`<option value=${activity.id}>${activity.name}</option>`))

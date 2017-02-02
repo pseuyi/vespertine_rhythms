@@ -29,21 +29,8 @@ app.use(express.static(__dirname + '/public'));
 app.use('/bootstrap', express.static(__dirname + '/bower_components/bootstrap/dist'));
 app.use('/jquery', express.static(__dirname + '/bower_components/jquery/dist'));
 
-app.get('/', function(req, res, next){
-	Promise.all([
-		Hotel.findAll({include: [{model: Place, as: 'place'}]}),
-		Restaurant.findAll({include: [{model: Place, as: 'place'}]}),
-		Activity.findAll({include: [{model: Place, as: 'place'}]}),
-	])
-	.spread((hotels, restaurants, activities)=>{
-		res.render('index', {
-			hotels,
-			restaurants,
-			activities
-		})
-	})
-	.catch(next)
-});
+// direct to routes
+app.use(require('./routes'))
 
 //not found middleware
 app.use(function(req, res, next){
@@ -64,7 +51,7 @@ app.use(function(err, req, res, next){
 	}
 	res.status(500)
 	res.render('error', {err: err});
-})
+});
 
 db.sync()
 .then(function(){
@@ -72,4 +59,4 @@ db.sync()
 })
 app.listen(process.env.PORT || 3000, function(){
 	console.log("serving up app.js...")
-})
+});

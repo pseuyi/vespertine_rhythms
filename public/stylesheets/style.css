@@ -40,7 +40,8 @@
 #menu-select {
   margin-right: 2%;
   padding: 1em;
-  background-color: rgba(224, 224, 223, 0.9); }
+  background-color: rgba(224, 224, 223, 0.9);
+  box-shadow: 10px 23px 38px -13px rgba(0, 0, 0, 0.75); }
   #menu-select div label, #menu-select div select, #menu-select div button {
     font-size: 0.8em;
     font-weight: normal;
@@ -49,7 +50,8 @@
 #plans {
   padding: 0;
   background-color: none;
-  font-size: 0.9em; }
+  font-size: 0.9em;
+  box-shadow: 10px 23px 38px -13px rgba(0, 0, 0, 0.75); }
   #plans h1 {
     padding: 0.2em 1em; }
   #plans .nav-pills > li.active > a::before {
@@ -69,8 +71,9 @@
   #plans .tab-content {
     color: black;
     background-color: rgba(224, 224, 223, 0.9); }
-  #plans .list {
-    padding-left: 1em; }
+  #plans ul.list {
+    padding-left: 1em;
+    margin-bottom: 0 !important; }
   #plans .list > li {
     list-style: none; }
 

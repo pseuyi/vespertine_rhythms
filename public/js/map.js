@@ -6,7 +6,9 @@ paths = [[]]
 attractions = [[]]
 
 const icons = {
-  vape: './icons/smoke.png'
+  vape: './icons/smoke.png',
+  bar: './icons/drop.png',
+  spirit: './icons/om.png'
 }
 
 const draw = (attraction, type) => {
@@ -23,7 +25,7 @@ const draw = (attraction, type) => {
     position: new google.maps.LatLng(attraction.location.lat, attraction.location.lng),
     draggable: true,
     title: attraction.name,
-    icon: icons[type],
+    icon: './icons/om.png',
     animation: google.maps.Animation.DROP
   })
   // save marker
@@ -39,8 +41,8 @@ const createPath = (day) => {
   let path = new google.maps.Polyline({
     path: coords[day-1],
     geodesic: true,
-    strokeColor: '#f441b0',
-    strokeOpacity: 0.9,
+    strokeColor: 'grey',
+    strokeOpacity: 0.8,
     strokeWeight: 1,
   })
   // save path
@@ -59,21 +61,21 @@ const initialize = () => {
     // initialize a new Google Map with the options
     map = new google.maps.Map(map_canvas_obj, {
           center: myLatlng,
-          zoom: 12,
+          zoom: 14,
           mapTypeId: google.maps.MapTypeId.ROADMAP,
           styles: [
             {elementType: 'geometry', stylers: [{color: '#fcfaf4'}]},
             {elementType: 'labels.text.stroke', stylers: [{color: '#fcfaf4'}]},
-            {elementType: 'labels.text.fill', stylers: [{color: '#fcfaf4'}]},
+            {elementType: 'labels.text.fill', stylers: [{color: '#d3bf8d'}]},
             {
               featureType: 'administrative.locality',
               elementType: 'labels.text.fill',
-              stylers: [{color: '#fcfaf4'}]
+              stylers: [{color: '#000000'}]
             },
             {
               featureType: 'poi',
               elementType: 'labels.text.fill',
-              stylers: [{color: '#fcfaf4'}]
+              stylers: [{color: '#f441b0'}]
             },
             {
               featureType: 'poi.park',
@@ -83,22 +85,22 @@ const initialize = () => {
             {
               featureType: 'poi.park',
               elementType: 'labels.text.fill',
-              stylers: [{color: '#fcfaf4'}]
+              stylers: [{color: '#000000'}]
             },
             {
               featureType: 'road',
               elementType: 'geometry',
-              stylers: [{color: '#fcfaf4'}]
+              stylers: [{color: '#ffffff'}]
             },
             {
               featureType: 'road',
               elementType: 'geometry.stroke',
-              stylers: [{color: '#fcfaf4'}]
+              stylers: [{color: '#ffffff'}]
             },
             {
               featureType: 'road',
               elementType: 'labels.text.fill',
-              stylers: [{color: '#fcfaf4'}]
+              stylers: [{color: '#ffffff'}]
             },
             {
               featureType: 'road.highway',
@@ -128,17 +130,42 @@ const initialize = () => {
             {
               featureType: 'water',
               elementType: 'geometry',
-              stylers: [{color: '#fcfaf4'}]
+              stylers: [{color: '#f4edd9'}]
             },
             {
               featureType: 'water',
               elementType: 'labels.text.fill',
-              stylers: [{color: '#fcfaf4'}]
+              stylers: [{color: '#f4edd9'}]
             },
             {
               featureType: 'water',
               elementType: 'labels.text.stroke',
-              stylers: [{color: '#fcfaf4'}]
+              stylers: [{color: '#f4edd9'}]
+            },
+            {
+              featureType: "administrative",
+              elementType: "labels",
+              stylers: [
+                { visibility: "on" }
+              ]
+            },{
+              featureType: "poi",
+              elementType: "labels",
+              stylers: [
+                { visibility: "off" }
+              ]
+            },{
+              featureType: "transit",
+              elementType: "labels",
+              stylers: [
+                { visibility: "off" }
+              ]
+            },{
+              featureType: "road",
+              elementType: "labels",
+              stylers: [
+                { visibility: "off" }
+              ]
             }
           ]
         });

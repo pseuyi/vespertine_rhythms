@@ -22,8 +22,7 @@ const addToItinerary = (type) => {
   // find the actual attraction
   let attraction = model[type].find(ele => ele.id === id)
   // add to correct list, edit: don't really need all this data
-  $activeList.append(`<li value=${attraction.id} data-type=${type}>
-    - ${attraction.name}
+  $activeList.append(`<li value=${attraction.id} data-type=${type}>${attraction.name}
     <button type='button' data-id=${attraction.id} data-list=${type} class='btn btn-default remove-btn'>x</button>
     </li>`)
   // remove the option from select

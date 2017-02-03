@@ -49,6 +49,7 @@ $lite-gr: rgba(224, 224, 223, 0.9);
   margin-right: 2%;
   padding: 1em;
   background-color: $lite-gr;
+  box-shadow: 10px 23px 38px -13px rgba(0,0,0,0.75);
   div {
     // border: 1px solid $primary;
     label, select, button {
@@ -62,6 +63,7 @@ $lite-gr: rgba(224, 224, 223, 0.9);
   padding: 0;
   background-color: none;
   font-size: 0.9em;
+  box-shadow: 10px 23px 38px -13px rgba(0,0,0,0.75);
   h1 {
     padding: 0.2em 1em;
   }
@@ -87,7 +89,7 @@ $lite-gr: rgba(224, 224, 223, 0.9);
     background-color: $lite-gr;
     //padding : 5px 15px;
   }
-  .list {
+  ul.list {
     padding-left: 1em;
     margin-bottom: 0 !important;
   }

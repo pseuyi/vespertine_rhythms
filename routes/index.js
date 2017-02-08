@@ -39,7 +39,7 @@ const createfsRoute = id => {
 }
 
 
-router.get('/', function (req, res, next){
+router.get('*', function (req, res, next){
 
   category_ids.forEach(id=>createfsRoute(id))
   Promise.all([...fsRoutes])

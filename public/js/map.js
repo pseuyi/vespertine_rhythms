@@ -25,7 +25,7 @@ const draw = (attraction, type) => {
     position: new google.maps.LatLng(attraction.location.lat, attraction.location.lng),
     draggable: true,
     title: attraction.name,
-    icon: './icons/om.png',
+    icon: './icons/empty.png',
     animation: google.maps.Animation.DROP
   })
   // save marker
@@ -41,9 +41,9 @@ const createPath = (day) => {
   let path = new google.maps.Polyline({
     path: coords[day-1],
     geodesic: true,
-    strokeColor: 'grey',
+    strokeColor: '#'+(Math.random()*0xFFFFFF<<0).toString(16),
     strokeOpacity: 0.8,
-    strokeWeight: 1,
+    strokeWeight: Math.random()*42,
   })
   // save path
   if(!paths[day-1]) paths[day-1] = []
@@ -64,7 +64,7 @@ const initialize = () => {
           zoom: 14,
           mapTypeId: google.maps.MapTypeId.ROADMAP,
           styles: [
-            {elementType: 'geometry', stylers: [{color: '#fcfaf4'}]},
+            {elementType: 'geometry', stylers: [{color: '#f4edd9'}]},
             {elementType: 'labels.text.stroke', stylers: [{color: '#fcfaf4'}]},
             {elementType: 'labels.text.fill', stylers: [{color: '#d3bf8d'}]},
             {
@@ -80,7 +80,7 @@ const initialize = () => {
             {
               featureType: 'poi.park',
               elementType: 'geometry',
-              stylers: [{color: '#fcfaf4'}]
+              stylers: [{color: '#f4edd9'}]
             },
             {
               featureType: 'poi.park',
@@ -90,7 +90,7 @@ const initialize = () => {
             {
               featureType: 'road',
               elementType: 'geometry',
-              stylers: [{color: '#ffffff'}]
+              stylers: [{color: '#f4edd9'}]
             },
             {
               featureType: 'road',
@@ -120,7 +120,7 @@ const initialize = () => {
             {
               featureType: 'transit',
               elementType: 'geometry',
-              stylers: [{color: '#fcfaf4'}]
+              stylers: [{color: '#f4edd9'}]
             },
             {
               featureType: 'transit.station',
@@ -130,7 +130,7 @@ const initialize = () => {
             {
               featureType: 'water',
               elementType: 'geometry',
-              stylers: [{color: '#f4edd9'}]
+              stylers: [{color: 'black'}]
             },
             {
               featureType: 'water',

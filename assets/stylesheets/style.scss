@@ -1,16 +1,17 @@
+$tan: #f4edd9;
 $primary: #afaf4b;
-$lite-gr: rgba(224, 224, 223, 0.9);
+$lite-gr: rgba(224, 224, 224, 0.9); //e0e0e0
 
 .navbar.navbar-default.navbar-static-top, .navbar-brand {
-  background-color: $primary;
+  background-color: $lite-gr;
   border-color: $primary;
   color: black !important;
   margin-bottom: 0;
-
+  // border: 1px solid black;
 }
 .navbar-default .navbar-nav>.active>a {
-  background-color: lighten($primary, 10%) !important;
-
+  // background-color: lighten($primary, 10%) !important;
+  background-color: $lite-gr;
 }
 .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
   background-color: $primary;
@@ -107,6 +108,7 @@ button.btn.btn-default.remove-btn {
   padding: 2px 4px;
   background: none;
   margin-bottom: 4px;
+  border-color: none !important;
 }
 .map-icon-label .map-icon {
 	display: block;

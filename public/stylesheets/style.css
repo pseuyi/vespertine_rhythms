@@ -1,11 +1,11 @@
 .navbar.navbar-default.navbar-static-top, .navbar-brand {
-  background-color: #afaf4b;
+  background-color: rgba(224, 224, 224, 0.9);
   border-color: #afaf4b;
   color: black !important;
   margin-bottom: 0; }
 
 .navbar-default .navbar-nav > .active > a {
-  background-color: #c0c06d !important; }
+  background-color: rgba(224, 224, 224, 0.9); }
 
 .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
   background-color: #afaf4b;
@@ -40,7 +40,7 @@
 #menu-select {
   margin-right: 2%;
   padding: 1em;
-  background-color: rgba(224, 224, 223, 0.9);
+  background-color: rgba(224, 224, 224, 0.9);
   box-shadow: 10px 23px 38px -13px rgba(0, 0, 0, 0.75); }
   #menu-select div label, #menu-select div select, #menu-select div button {
     font-size: 0.8em;
@@ -61,16 +61,16 @@
   #plans .nav-pills > li.active > a:hover,
   #plans .nav-pills > li > a:hover {
     color: black;
-    background-color: rgba(224, 224, 223, 0.9); }
+    background-color: rgba(224, 224, 224, 0.9); }
   #plans .nav-pills > li > a,
   #plans .nav-pills > li > a:focus {
     padding: 0.2em 1em;
-    color: rgba(224, 224, 223, 0.9);
+    color: rgba(224, 224, 224, 0.9);
     background-color: black;
     border-radius: 4px 4px 0 0; }
   #plans .tab-content {
     color: black;
-    background-color: rgba(224, 224, 223, 0.9); }
+    background-color: rgba(224, 224, 224, 0.9); }
   #plans ul.list {
     padding-left: 1em;
     margin-bottom: 0 !important; }
@@ -85,7 +85,8 @@ button.btn.btn-default.remove-btn {
   border-radius: 12px;
   padding: 2px 4px;
   background: none;
-  margin-bottom: 4px; }
+  margin-bottom: 4px;
+  border-color: none !important; }
 
 .map-icon-label .map-icon {
   display: block;

@@ -38,15 +38,21 @@ const createfsRoute = id => {
   fsRoutes.push(axios.get(fsRoute))
 }
 
-
-router.get('*', function (req, res, next){
-
+router.get('/', function (req, res, next){
   category_ids.forEach(id=>createfsRoute(id))
   Promise.all([...fsRoutes])
   .spread((vapes, bars, spirits)=>{
     res.render('index', { vapes: vapes.data.response.venues, bars: bars.data.response.venues, spirits: spirits.data.response.venues }) // json file of vape store metadata
   })
 	.catch(next)
+})
+
+router.get('/about', function (req, res, next) {
+  res.render('about', { vapes: [], bars: [], spirits: [] })
+})
+
+router.get('/contact', function (req, res, next) {
+  res.render('contact', { vapes: [], bars: [], spirits: [] })
 })
 
 // router.get('/vape', function (req, res, next) {

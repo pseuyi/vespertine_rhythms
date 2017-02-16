@@ -14,17 +14,47 @@
 .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
   color: white !important; }
 
+#about, #contact {
+  padding: 2em;
+  background-color: #afaf4b;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: block; }
+  #about p, #contact p {
+    font-size: 1.4em; }
+
+#contact-links a {
+  padding: 0.3em;
+  margin-right: 1em;
+  display: inline-block;
+  font-size: 18px;
+  color: white;
+  border: solid 1px white; }
+
+#contact-links a:hover {
+  color: red; }
+
+#jquery-logo {
+  width: 120px; }
+
+#foursquare-logo {
+  width: 200px; }
+
 .container.map {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; }
+  z-index: -1000; }
 
 #map-canvas {
   width: 100%;
   height: calc(100% - 51px);
-  position: absolute; }
+  position: absolute;
+  z-index: -1000; }
 
 #menu-group {
   position: fixed;

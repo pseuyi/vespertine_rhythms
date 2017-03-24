@@ -35,7 +35,7 @@ $(()=>{
     createPath(currDay)
 
     // repopulate the options list
-    console.log('is model defined', model)
+    // console.log('is model defined', model)
     let attraction = model[type].find(ele => +ele.placeId === +placeId)
     let $list = $options.find(`#${type}-opts`)
     $list.append(`<option value=${attraction.id}>${attraction.name}</option>`)

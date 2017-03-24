@@ -10,8 +10,8 @@ const Promise = require("bluebird")
 module.exports = router
 
 // foursquare tokens
-const client_id = "TDIAGN5LQWKX0FHAHMBXLWDGOJPSZ51UGPIEAAPRZLRAHXYD"
-const client_secret = "0DLE4W0TWM3UAMCK0HTDQ1MSIWGQOOLVC1ZCAOQ10OI4TTEG"
+const client_id = process.env.FS_ID || local.keys.id
+const client_secret = process.env.FS_KEY || local.keys.key
 const distance = '5000'
 const category_ids = ['56aa371be4b08b9a8d57355c', '4bf58dd8d48988d116941735', '4bf58dd8d48988d131941735']
 const sw = '40.701645, -74.019423' // use intent=browse
@@ -32,7 +32,7 @@ const createfsRoute = id => {
   &categoryId=${id}
   &client_id=${client_id}
   &client_secret=${client_secret}
-  &sw=${sw}
+  &sw=${sw}3
   &ne=${ne}
   &v=${date}`
   fsRoutes.push(axios.get(fsRoute))

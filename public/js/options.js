@@ -27,6 +27,7 @@ const addToItinerary = (type) => {
     </li>`)
   // remove the option from select
   $selection.remove()
+  console.log('attraction', attraction)
   draw(attraction, type)
 }
 
